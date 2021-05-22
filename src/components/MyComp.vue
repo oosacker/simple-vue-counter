@@ -2,10 +2,10 @@
   <div class="counter">
     <h1 class="counter__heading">My Counter</h1>
     <h3 class="counter__count">{{ count }}</h3>
-    <p>{{ startVal }}</p>
+    <p>Start value={{ startVal }}</p>
     <button class="counter__inc-button" @click="count++">INCREMENT</button>
     <button class="counter__reset-button" @click="count=0">RESET</button>
-    <button class="counter__test-button" @click="onTestBtnClick">TEST</button>
+    <button class="counter__test-button" @click="this.$emit('test-btn-click', count);">SEND</button>
   </div>
 </template>
 
@@ -15,38 +15,13 @@ export default {
   data() {
     return {
       count: this.startVal
-      //count: 0
     }
   },
   props: {
     startVal: Number
   },
-  methods: {
-    incCount() {
-      this.count++
-    },
-    resetCount() {
-      this.count = 0;
-    },
-    onIncBtnClick(e) {
-      //console.log(e)
-      e.preventDefault()
-      this.incCount()
-    },
-    onRstBtnClick(e) {
-      //console.log(e)
-      e.preventDefault()
-      this.resetCount()
-    },
-    onTestBtnClick(e) {
-      // console.log(e)
-      e.preventDefault()
-      this.$emit("test-btn-click", 'this is a string that was sent from MyComp');
-    }
-  },
-  created() {
-    //this.$emit("emitted-event")
-  }
+  methods: {},
+  created() {}
 }
 </script>
 

@@ -1,10 +1,10 @@
 <template>
   <div class="container">
       <MyComp 
-        startVal=5 
+        startVal=999
         @test-btn-click="testBtnClick"
       />
-      <p>{{ setVal }}</p>
+      <p>Current count={{ setVal }}</p>
   </div>
 </template>
 
@@ -41,6 +41,7 @@ export default {
 <style lang="scss">
   .container {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 </style>
