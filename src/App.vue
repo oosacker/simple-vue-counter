@@ -2,9 +2,9 @@
   <div class="container">
       <MyComp 
         startVal=5 
-        @test-btn-click="testBtnCLick"
+        @test-btn-click="testBtnClick"
       />
-      
+      <p>{{ setVal }}</p>
   </div>
 </template>
 
@@ -16,9 +16,23 @@ export default {
   components: {
     MyComp
   },
+  data() {
+    return {
+      mystring: ''
+    }
+  },
+  // only runs if values are changed (cached); no properties allowed
+  computed: {
+    setVal() {
+      return this.mystring
+    }
+  },
+  // 
   methods: {
-    testBtnCLick() {
-      console.log('test')
+    testBtnClick(return_val) {
+      // console.log('test')
+      console.log(return_val)
+      this.mystring = return_val
     }
   }
 }
