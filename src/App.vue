@@ -29,9 +29,7 @@ export default {
   },
   // 
   methods: {
-    testBtnClick(return_val) {
-      // console.log('test')
-      console.log(return_val)
+    testBtnClick(return_val) {  // value sent from MyComp as @test-btn-click
       this.mystring = return_val
     }
   }
